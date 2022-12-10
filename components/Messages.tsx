@@ -1,11 +1,7 @@
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
 import { useSockets } from "../context/socket.context";
-
-type Message = {
-  status: boolean;
-  message: string;
-};
+import type { Response } from "../@types";
 
 const styles = {
   wrapper: "min-h-screen h-screen w-[calc(100%_-_200px)] flex flex-col",
@@ -38,7 +34,7 @@ export default function Messages() {
         room_name: room,
         content: message,
       },
-      (response: Message) => {
+      (response: Response) => {
         alert(response.message);
       }
     );

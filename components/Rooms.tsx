@@ -1,10 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSockets } from "../context/socket.context";
-
-type Response = {
-  status: boolean;
-  messages: string[];
-};
+import type { Response } from "../@types";
 
 const styles = {
   container: "w-72 bg-default min-h-screen h-screen p-4 border-solid border-black border-r-2",
@@ -32,8 +28,7 @@ export default function Rooms() {
         privateRoom: false,
       },
       (response: Response) => {
-        console.log(response);
-        alert(response.messages);
+        alert(response.message);
       }
     );
 

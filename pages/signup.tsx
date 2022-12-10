@@ -2,11 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
 import { useSockets } from "../context/socket.context";
-
-type SignUp = {
-  status: boolean;
-  message: string;
-};
+import type { Response } from "../@types";
 
 const styles = {
   signupWrapper: "w-full flex min-h-screen items-center justify-center",
@@ -31,7 +27,7 @@ export default function SignUp() {
         username,
         password,
       },
-      (response: SignUp) => {
+      (response: Response) => {
         alert(response.message);
         console.log(response);
         if (response.status) {

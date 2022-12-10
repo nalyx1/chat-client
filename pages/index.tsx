@@ -1,12 +1,8 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useSockets } from "../context/socket.context";
-
-type Login = {
-  status: boolean;
-  message: string;
-};
+import type { Response } from "../@types";
 
 const styles = {
   loginWrapper: "w-full flex min-h-screen items-center justify-center",
@@ -29,7 +25,7 @@ export default function Login() {
         username,
         password,
       },
-      (response: Login) => {
+      (response: Response) => {
         alert(response.message);
         if (response.status) {
           localStorage.setItem("username", username);

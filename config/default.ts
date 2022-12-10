@@ -1,1 +1,1 @@
-export const SOCKET_URL = process.env.SOCKET_URL || "http://localhost:5000";
+export const SOCKET_URL = "https://chat-server.herokuapp.com/" || "http://localhost:5000";
