@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+body {
+  @apply bg-[url('/bg.png')] bg-center bg-no-repeat bg-cover h-screen;
+}
+
+button {
+  @apply text-white border-none cursor-pointer p-2 rounded;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
